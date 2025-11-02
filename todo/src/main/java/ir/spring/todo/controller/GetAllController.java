@@ -24,7 +24,7 @@ public class GetAllController {
                 return ResponseEntity.ok(todoItemService.getAllItems(pageable));
         }
 
-        @GetMapping("/sorted")
+        @GetMapping("/sort")
         public ResponseEntity<Page<TodoItemResponse>> getSortedItems(Pageable pageable, @RequestParam String sortBy) {
                 List<String> sortByListed = List.of("createdAt", "updatedAt", "deadlineAt");
                 if (!sortByListed.contains(sortBy)) {
